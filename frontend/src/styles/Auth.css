@@ -1,0 +1,665 @@
+/* ============================================================
+   CRAFTELLIGENCE AUTH — Mobile-First Responsive
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap');
+
+/* ── Variables ── */
+:root {
+  --clay:         #c8714a;
+  --clay-dark:    #a0502f;
+  --clay-light:   #e8a07a;
+  --gold:         #d4a853;
+  --gold-light:   #f0cc82;
+  --cream:        #fdf6ec;
+  --ink:          #1a110a;
+  --ink-soft:     #3d2b1f;
+  --white:        #ffffff;
+
+  --ff-display:   'Cormorant Garamond', serif;
+  --ff-body:      'DM Sans', sans-serif;
+
+  --ease-spring:  cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-out:     cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-smooth:  cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ── Reset ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* body styles intentionally removed — set in index.css or App.css, not here */
+
+/* ============================================================
+   LAYOUT
+   Mobile  : single column — image banner on top, form below
+   Desktop : side-by-side 50/50 split
+   ============================================================ */
+
+.auth-container {
+  display: flex;
+  flex-direction: column;   /* mobile: stacked */
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* ── Left Visual Panel ── */
+.auth-visual {
+  position: relative;
+  width: 100%;
+  height: 220px;            /* mobile height */
+  overflow: hidden;
+  flex-shrink: 0;
+  background:
+    linear-gradient(
+      160deg,
+      rgba(200, 113, 74, 0.60) 0%,
+      rgba(26,  17,  10, 0.80) 55%,
+      rgba(26,  17,  10, 0.95) 100%
+    ),
+    url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&q=80')
+      center / cover no-repeat;
+  animation: panelFadeIn 1s var(--ease-out) both;
+}
+
+.auth-visual::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
+  background-size: 200px;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.auth-visual-content {
+  position: relative;
+  z-index: 3;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;  /* mobile: text pinned to bottom */
+  padding: 20px 24px;
+}
+
+.auth-visual-badges {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+.auth-visual-badge {
+  padding: 5px 12px;
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(8px);
+  font-family: var(--ff-body);
+  font-size: 0.66rem;
+  font-weight: 400;
+  color: rgba(253, 246, 236, 0.70);
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  cursor: default;
+  transition: background 0.3s, transform 0.3s var(--ease-spring);
+}
+
+.auth-visual-badge:hover {
+  background: rgba(212, 168, 83, 0.20);
+  transform: translateY(-3px);
+}
+
+.auth-visual-tagline {
+  font-family: var(--ff-display);
+  font-size: 1.75rem;           /* mobile */
+  font-weight: 300;
+  line-height: 1.15;
+  color: var(--cream);
+  letter-spacing: -0.01em;
+  animation: slideUpFade 0.9s 0.25s var(--ease-out) both;
+}
+
+.auth-visual-tagline em {
+  font-style: italic;
+  color: var(--gold-light);
+}
+
+.auth-visual-sub {
+  margin-top: 6px;
+  font-size: 0.68rem;
+  font-weight: 300;
+  color: rgba(253, 246, 236, 0.44);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  animation: slideUpFade 0.9s 0.40s var(--ease-out) both;
+}
+
+.auth-visual-bar {
+  width: 28px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--gold), transparent);
+  border-radius: 2px;
+  margin-top: 10px;
+  animation: lineGrow 0.7s 0.50s var(--ease-out) both;
+  transform-origin: left;
+}
+
+/* ── Right Form Panel ── */
+.auth-form-panel {
+  flex: 1;
+  background: var(--cream);
+  display: flex;
+  align-items: flex-start;      /* mobile: top-align (no cut-off) */
+  justify-content: center;
+  padding: 32px 20px 48px;      /* generous bottom on mobile */
+  position: relative;
+  overflow: hidden;
+}
+
+.auth-form-panel::before {
+  content: '';
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(200, 113, 74, 0.06) 0%, transparent 70%);
+  top: -100px;
+  right: -100px;
+  pointer-events: none;
+}
+
+.auth-form-panel::after {
+  content: '';
+  position: absolute;
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(212, 168, 83, 0.05) 0%, transparent 70%);
+  bottom: -80px;
+  left: -80px;
+  pointer-events: none;
+}
+
+/* ── Card ── */
+.card {
+  width: 100%;
+  max-width: 420px;
+  position: relative;
+  z-index: 1;
+  animation: cardEntrance 0.7s var(--ease-out) both;
+}
+
+/* ============================================================
+   BRAND + HEADINGS
+   ============================================================ */
+
+.auth-brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+  animation: slideUpFade 0.7s 0.10s var(--ease-out) both;
+}
+
+.auth-brand-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--clay), var(--gold));
+  flex-shrink: 0;
+}
+
+.auth-brand-label {
+  font-family: var(--ff-body);
+  font-size: 0.68rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--clay);
+  font-weight: 400;
+}
+
+.logo-auth {
+  width: 130px;
+  margin-bottom: 6px;
+}
+
+.card h2 {
+  font-family: var(--ff-display);
+  font-size: 2rem;
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  line-height: 1.15;
+  margin: 4px 0;
+  animation: slideUpFade 0.7s 0.15s var(--ease-out) both;
+}
+
+.card h2 em {
+  font-style: italic;
+  color: var(--clay);
+}
+
+.auth-subtitle {
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+  opacity: 0.50;
+  font-weight: 300;
+  animation: slideUpFade 0.7s 0.20s var(--ease-out) both;
+}
+
+.auth-divider {
+  width: 32px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--clay), var(--gold));
+  border-radius: 2px;
+  margin: 12px 0 22px;
+  animation: lineGrow 0.6s 0.25s var(--ease-out) both;
+  transform-origin: left;
+}
+
+/* ============================================================
+   TAB NAV
+   ============================================================ */
+
+.auth-tabs {
+  display: flex;
+  border-radius: 10px;
+  background: rgba(200, 113, 74, 0.08);
+  padding: 4px;
+  margin-bottom: 26px;
+  animation: slideUpFade 0.6s 0.10s var(--ease-out) both;
+}
+
+.auth-tab {
+  flex: 1;
+  padding: 9px 12px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-family: var(--ff-body);
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: rgba(26, 17, 10, 0.40);
+  border-radius: 7px;
+  letter-spacing: 0.04em;
+  transition: background 0.3s, color 0.3s, transform 0.2s var(--ease-spring);
+  white-space: nowrap;
+}
+
+.auth-tab.active {
+  background: var(--white);
+  color: var(--clay);
+  font-weight: 500;
+  box-shadow: 0 2px 8px rgba(200, 113, 74, 0.12);
+}
+
+.auth-tab:not(.active):hover {
+  color: var(--ink);
+  transform: translateY(-1px);
+}
+
+/* ============================================================
+   INPUT FIELDS
+   ============================================================ */
+
+.input-group {
+  position: relative;
+  margin-bottom: 14px;
+  animation: slideUpFade 0.6s var(--ease-out) both;
+}
+
+.input-group:nth-child(1) { animation-delay: 0.25s; }
+.input-group:nth-child(2) { animation-delay: 0.32s; }
+.input-group:nth-child(3) { animation-delay: 0.39s; }
+.input-group:nth-child(4) { animation-delay: 0.46s; }
+
+.auth-form-panel input,
+.auth-form-panel textarea {
+  width: 100%;
+  padding: 13px 44px 13px 16px;
+  border-radius: 11px;
+  border: 1.5px solid rgba(200, 113, 74, 0.18);
+  background: var(--white);
+  font-family: var(--ff-body);
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: var(--ink);
+  outline: none;
+  -webkit-appearance: none;
+  transition:
+    border-color 0.3s var(--ease-smooth),
+    box-shadow   0.3s var(--ease-smooth),
+    transform    0.2s var(--ease-spring);
+}
+
+.auth-form-panel input::placeholder,
+.auth-form-panel textarea::placeholder {
+  color: rgba(61, 43, 31, 0.32);
+  font-weight: 300;
+  font-size: 0.84rem;
+}
+
+.auth-form-panel input:focus,
+.auth-form-panel textarea:focus {
+  border-color: var(--clay);
+  box-shadow:
+    0 0 0 4px rgba(200, 113, 74, 0.10),
+    0 2px 12px rgba(200, 113, 74, 0.07);
+  transform: translateY(-1px);
+}
+
+.auth-form-panel textarea {
+  resize: none;
+  height: 88px;
+  line-height: 1.5;
+  padding-right: 16px;
+}
+
+.input-icon {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.88rem;
+  opacity: 0.25;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+
+.auth-form-panel input:focus ~ .input-icon { opacity: 0.60; }
+
+/* ============================================================
+   PRIMARY BUTTON
+   ============================================================ */
+
+.btn {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 15px;
+  margin-top: 4px;
+  background: linear-gradient(135deg, var(--clay) 0%, var(--clay-dark) 100%);
+  color: var(--cream);
+  border: none;
+  border-radius: 11px;
+  font-family: var(--ff-body);
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  cursor: pointer;
+  overflow: hidden;
+  transition:
+    transform  0.25s var(--ease-spring),
+    box-shadow 0.30s var(--ease-smooth);
+  animation: slideUpFade 0.6s 0.50s var(--ease-out) both;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, var(--gold) 0%, var(--clay-light) 100%);
+  opacity: 0;
+  transition: opacity 0.4s var(--ease-smooth);
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 12px 28px rgba(200, 113, 74, 0.30),
+    0 4px 10px  rgba(200, 113, 74, 0.16);
+}
+
+.btn:hover::before { opacity: 1; }
+.btn:active        { transform: translateY(-1px) scale(0.99); }
+
+.btn::after {
+  content: '';
+  position: absolute;
+  top: -50%; left: -60%;
+  width: 40%; height: 200%;
+  background: linear-gradient(
+    105deg,
+    transparent 40%,
+    rgba(255, 255, 255, 0.28) 50%,
+    transparent 60%
+  );
+  transform: skewX(-15deg);
+  transition: left 0.6s var(--ease-out);
+  pointer-events: none;
+}
+
+.btn:hover::after { left: 130%; }
+.btn > span       { position: relative; z-index: 1; }
+
+/* ============================================================
+   ROLE CARDS
+   ============================================================ */
+
+.role-card {
+  display: flex;           /* force flex on button elements */
+  flex-direction: row;     /* explicit row direction */
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  padding: 15px 16px;
+  margin-bottom: 12px;
+  border-radius: 14px;
+  border: 1.5px solid rgba(200, 113, 74, 0.15);
+  background: var(--white);
+  cursor: pointer;
+  text-align: left;
+  font-family: var(--ff-body);
+  -webkit-appearance: none;   /* strip native button styles on Safari */
+  appearance: none;
+  transition:
+    border-color 0.3s var(--ease-smooth),
+    background   0.3s var(--ease-smooth),
+    transform    0.25s var(--ease-spring),
+    box-shadow   0.3s var(--ease-smooth);
+  animation: slideUpFade 0.6s var(--ease-out) both;
+}
+
+.role-card:nth-child(1) { animation-delay: 0.22s; }
+.role-card:nth-child(2) { animation-delay: 0.34s; }
+
+.role-card-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 11px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  background: linear-gradient(135deg,
+    rgba(200, 113, 74, 0.09),
+    rgba(212, 168, 83, 0.09)
+  );
+  transition: transform 0.3s var(--ease-spring);
+}
+
+.role-card-text { flex: 1; min-width: 0; display: flex; flex-direction: column; align-items: flex-start; }
+
+.role-card-title {
+  display: block;
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: var(--ink);
+}
+
+.role-card-desc {
+  display: block;
+  font-size: 0.73rem;
+  color: rgba(61, 43, 31, 0.44);
+  font-weight: 300;
+  margin-top: 2px;
+}
+
+.role-card-arrow {
+  font-size: 0.88rem;
+  opacity: 0.20;
+  color: var(--clay);
+  flex-shrink: 0;
+  transition: opacity 0.3s, transform 0.3s var(--ease-spring);
+}
+
+.role-card:hover {
+  border-color: var(--clay);
+  background: rgba(200, 113, 74, 0.03);
+  transform: translateX(5px);
+  box-shadow: 0 4px 18px rgba(200, 113, 74, 0.10);
+}
+
+.role-card:hover .role-card-icon  { transform: scale(1.10) rotate(-5deg); }
+.role-card:hover .role-card-arrow { opacity: 0.75; transform: translateX(4px); }
+
+/* ============================================================
+   LINKS
+   ============================================================ */
+
+.links {
+  margin-top: 20px;
+  font-size: 0.78rem;
+  color: rgba(61, 43, 31, 0.44);
+  text-align: center;
+  font-weight: 300;
+  animation: slideUpFade 0.6s 0.60s var(--ease-out) both;
+}
+
+.link-btn {
+  color: var(--clay);
+  cursor: pointer;
+  font-weight: 500;
+  border-bottom: 1px solid rgba(200, 113, 74, 0.25);
+  transition: color 0.25s, border-color 0.25s;
+  text-decoration: none;
+}
+
+.link-btn:hover {
+  color: var(--clay-dark);
+  border-bottom-color: var(--clay-dark);
+}
+
+/* ============================================================
+   KEYFRAMES
+   ============================================================ */
+
+@keyframes panelFadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes cardEntrance {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0);    }
+}
+
+@keyframes slideUpFade {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0);    }
+}
+
+@keyframes lineGrow {
+  from { transform: scaleX(0); opacity: 0; }
+  to   { transform: scaleX(1); opacity: 1; }
+}
+
+/* ============================================================
+   TABLET  ≥ 560px
+   ============================================================ */
+
+@media (min-width: 560px) {
+  .auth-visual {
+    height: 260px;
+  }
+
+  .auth-visual-content {
+    padding: 28px 36px;
+  }
+
+  .auth-visual-tagline {
+    font-size: 2.2rem;
+  }
+
+  .auth-form-panel {
+    padding: 40px 40px 52px;
+  }
+
+  .card h2 {
+    font-size: 2.2rem;
+  }
+}
+
+/* ============================================================
+   DESKTOP ≥ 860px — true 50/50 side-by-side
+   ============================================================ */
+
+@media (min-width: 860px) {
+  .auth-container {
+    flex-direction: row;
+    height: 100vh;
+    overflow: hidden;         /* prevent page scroll; each side scrolls independently */
+  }
+
+  /* Left panel: fixed half, full viewport height */
+  .auth-visual {
+    width: 50%;
+    height: 100%;             /* override the mobile height */
+    flex-shrink: 0;
+    animation: panelReveal 1.1s var(--ease-out) both;
+  }
+
+  .auth-visual-content {
+    height: 100%;
+    justify-content: space-between;   /* badges top, tagline bottom */
+    padding: 48px 52px;
+  }
+
+  .auth-visual-tagline {
+    font-size: clamp(2.6rem, 3.2vw, 3.8rem);
+  }
+
+  /* Right panel: scrollable, vertically centred */
+  .auth-form-panel {
+    width: 50%;
+    height: 100%;
+    overflow-y: auto;
+    align-items: center;      /* vertically centre card */
+    padding: 48px 44px;
+  }
+
+  .card h2 {
+    font-size: clamp(2rem, 2.6vw, 2.6rem);
+  }
+}
+
+/* ============================================================
+   LARGE DESKTOP ≥ 1200px
+   ============================================================ */
+
+@media (min-width: 1200px) {
+  .auth-form-panel {
+    padding: 56px 64px;
+  }
+
+  .card {
+    max-width: 440px;
+  }
+}
+
+/* Desktop clip-path panel reveal */
+@keyframes panelReveal {
+  from { clip-path: inset(0 100% 0 0); }
+  to   { clip-path: inset(0 0%   0 0); }
+}
