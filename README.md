@@ -80,309 +80,303 @@ Learn about artisan profiles and their handcrafted collections
 
 
 
-***\* User registration and login.***
+User registration and login.
 
-***\* Secure authentication system for customers and administrators.***
+Secure authentication system for customers and administrators.
 
 
 
-***---***
 
 
 
-***## 🛠️ Tech Stack***
 
+ 🛠️ Tech Stack
 
 
-***### Frontend***
 
+Frontend
 
 
-***\* React.js***
 
-***\* HTML5***
+ React.js
 
-***\* CSS3***
+HTML5
 
-***\* JavaScript***
+CSS3
 
+JavaScript
 
 
-***### Backend***
 
+Backend
 
 
-***\* Django***
 
-***\* Django REST Framework***
+Django
 
+Django REST Framework
 
 
-***### Database***
 
+Database
 
 
-***\* MySQL*** 
 
-***### Artificial Intelligence***
+MySQL
 
+Artificial Intelligence
 
 
-***\* AI Chatbot***
 
-***\* Image-based Product Recommendation***
+AI Chatbot
 
-***\* Natural Language Processing***
+Image-based Product Recommendation
 
+Natural Language Processing
 
 
-***### Other Tools***
 
+Other Tools
 
 
-***\* Git***
 
-***\* GitHub***
+ Git
 
+GitHub
 
 
-***Add your api keys in backend/settings.py***
 
+Add your api keys in backend/settings.py
 
 
-***GEMINI\_API\_KEY = "AIza..."***
 
-***HUGGINGFACE\_API\_KEY = "hf\_Gu..."***
+GEMINI\_API\_KEY = "AIza..."
 
-***OPENROUTER\_API\_KEY = "sk-o..."***
+HUGGINGFACE\_API\_KEY = "hf\_Gu..."
 
-***SECRET\_KEY = 'djang...'***
+OPENROUTER\_API\_KEY = "sk-o..."
 
+SECRET\_KEY = 'djang...'
 
 
-***and in last :-***
 
+***and in last :-
 
 
-***STRIPE\_SECRET\_KEY = "sk\_te..."***
 
-***STRIPE\_PUBLISHABLE\_KEY = "pk\_tes..."***
+STRIPE\_SECRET\_KEY = "sk\_te..."
 
+STRIPE\_PUBLISHABLE\_KEY = "pk\_tes..."
 
 
-***Here :-***
 
+Here 
 
 
-***---***
 
 
 
-***## 📂 Project Structure***
 
 
+📂 Project Structure
 
-***```***
 
-***Craftelligence/***
 
-***│***
 
-***├── frontend/***
 
-***├── backend/***
+Craftelligence
 
-***├── media/***
 
-***├── static/***
 
-***├── README.md***
+├── frontend
 
-***└── requirements.txt***
+├── backend/
 
-***```***
+├── media/
 
+├── static/
 
+├── README.md
 
-***\*(Update the structure if your project differs.)\****
+└── requirements.txt
 
 
 
-***---***
 
 
 
-***## 🚀 Installation***
 
 
 
-***### Clone the Repository***
+ 🚀 Installation
 
 
 
-***```bash***
+ Clone the Repository
 
-***git clone https://github.com/your-username/Craftelligence.git***
 
-***cd Craftelligence***
 
-***```***
+```bash
 
+git clone https://github.com/your-username/Craftelligence.git
 
+cd Craftelligence
 
-***### Backend Setup***
+```
 
 
 
-***```bash***
+ Backend Setup
 
-***cd backend***
 
 
+```bash
 
-***python -m venv venv***
+cd backend
 
 
 
-***# Windows***
+python -m venv venv
 
-***venv\\Scripts\\activate***
 
 
+# Windows
 
-***# Linux/macOS***
+venv\\Scripts\\activate
 
-***source venv/bin/activate***
 
 
+# Linux/macOS
 
-***pip install -r requirements.txt***
+source venv/bin/activate
 
-***```***
 
 
+pip install -r requirements.txt
 
-***### Run Backend***
+```
 
 
 
-***```bash***
+Run Backend
 
-***python manage.py migrate***
 
-***python manage.py runserver***
 
-***```***
+```bash
 
+python manage.py migrate
 
+python manage.py runserver
 
-***### Frontend Setup***
+```
 
 
 
-***```bash***
+Frontend Setup
 
-***cd frontend***
 
 
+```bash
 
-***npm install***
+cd frontend
 
-***npm start***
 
-***```***
 
+npm install
 
+npm start
 
-***---***
+```
 
 
 
-***## 📸 Screenshots***
 
 
 
-***Add screenshots of:***
 
+📸 Screenshots
 
 
-***\* Home Page***
 
-***\* Product Listing***
+Add screenshots of:
 
-***\* AI Chatbot***
 
-***\* AI Design Room***
 
-***\* Artisan Profile***
+Home Page
 
-***\* Product Details***
+ Product Listing
 
-***\* Multilingual Interface***
+ AI Chatbot
 
+ AI Design Room
+ Artisan Profile
 
+ Product Details
 
-***---***
+ Multilingual Interface
 
 
 
-***## 🎯 Future Enhancements***
 
 
 
-***\* Payment Gateway Integration***
 
-***\* Order Tracking***
+🎯 Future Enhancements
 
-***\* Wishlist***
 
-***\* Product Reviews and Ratings***
 
-***\* Voice-enabled AI Assistant***
+Payment Gateway Integration
 
-***\* AI-based Personalized Recommendations***
+ Order Tracking
 
-***\* Mobile Application***
+ Wishlist
 
+ Product Reviews and Ratings
 
+Voice-enabled AI Assistant
 
-***---***
+ AI-based Personalized Recommendations
 
+ Mobile Application
 
 
-***## 🤝 Contributors***
 
 
 
-***\* \*\*Jenil Mangukiya\*\****
 
 
+ 🤝 Contributors
 
-***---***
 
 
+Jenil Mangukiya
 
-***## 📄 License***
 
 
 
-***This project is developed for educational and academic purposes.***
 
 
 
-***---***
+ 📄 License
 
 
 
-***## ⭐ Support***
+This project is developed for educational and academic purposes
 
 
 
-***If you found this project useful, consider giving it a ⭐ on GitHub.***
 
 
 
-***It helps others discover the project and motivates further development.***
+ ⭐ Support
+
+
+
+If you found this project useful, consider giving it a ⭐ on GitHub
+
+
+
+It helps others discover the project and motivates further development
 
 
 
