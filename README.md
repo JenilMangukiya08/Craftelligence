@@ -2,11 +2,11 @@
 
 
 
-***Craftelligence is an AI-powered multilingual handicraft e-commerce platform that connects customers with skilled artisans while providing an intelligent and personalized shopping experience. The platform combines modern web technologies with Artificial Intelligence to make discovering and purchasing handcrafted products easier and more engaging.***
+Craftelligence is an AI-powered multilingual handicraft e-commerce platform that connects customers with skilled artisans while providing an intelligent and personalized shopping experience. The platform combines modern web technologies with Artificial Intelligence to make discovering and purchasing handcrafted products easier and more engaging.***
 
 
 
-***---***
+
 
 
 
@@ -14,69 +14,69 @@
 
 
 
-***### 🌍 Multilingual Support***
+🌍 Multilingual Support
 
 
 
-***\* Supports three different languages.***
+Supports three different languages.
 
-***\* Allows users to browse the platform in their preferred language.***
+Allows users to browse the platform in their preferred language.
 
-***\* Improves accessibility for users from diverse regions.***
-
-
-
-***### 🛍️ Handicraft Marketplace***
+Improves accessibility for users from diverse regions.
 
 
 
-***\* Browse handcrafted products from various artisans.***
-
-***\* Search and filter products by category.***
-
-***\* View detailed product information.***
-
-***\* Easy-to-use shopping experience.***
+🛍️ Handicraft Marketplace
 
 
 
-***### 🤖 AI Chatbot***
+Browse handcrafted products from various artisans.
+
+Search and filter products by category.
+
+View detailed product information.
+
+Easy-to-use shopping experience.
 
 
 
-***\* Intelligent chatbot that assists users in finding artisans and products.***
-
-***\* Provides personalized recommendations based on user queries.***
-
-***\* Enhances customer support and navigation.***
+🤖 AI Chatbot
 
 
 
-***### 🎨 AI Design Room***
+Intelligent chatbot that assists users in finding artisans and products.
+
+Provides personalized recommendations based on user queries.
+
+Enhances customer support and navigation.
 
 
 
-***\* Upload an image of your room or wall.***
-
-***\* AI analyzes the uploaded image.***
-
-***\* Displays handicraft products that best match the uploaded space.***
-
-***\* Helps users visualize products before purchasing.***
+ 🎨 AI Design Room
 
 
 
-***### 👨‍🎨 Artisan Discovery***
+Upload an image of your room or wall.
+
+AI analyzes the uploaded image.
+
+Displays handicraft products that best match the uploaded space.
+
+Helps users visualize products before purchasing.
 
 
 
-***\* Find artisans based on their specialties.***
-
-***\* Learn about artisan profiles and their handcrafted collections.***
+👨‍🎨 Artisan Discovery
 
 
 
-***### 🔒 Secure Authentication***
+Find artisans based on their specialties.
+
+Learn about artisan profiles and their handcrafted collections
+
+
+
+ 🔒 Secure Authentication
 
 
 
