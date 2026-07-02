@@ -1,4 +1,4 @@
-***# 🎨 Craftelligence***
+🎨 Craftelligence
 
 
 
@@ -10,7 +10,7 @@
 
 
 
-***## ✨ Features***
+✨ Features
 
 
 
