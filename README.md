@@ -1,382 +1,264 @@
-🎨 Craftelligence
+# 🎨 Craftelligence
 
+<p align="center">
 
+![React](https://img.shields.io/badge/React-Frontend-61DAFB?style=for-the-badge\&logo=react)
+![Django](https://img.shields.io/badge/Django-Backend-092E20?style=for-the-badge\&logo=django)
+![MySQL](https://img.shields.io/badge/MySQL-Database-blue?style=for-the-badge\&logo=mysql)
+![AI](https://img.shields.io/badge/AI-Powered-success?style=for-the-badge)
+![Multilingual](https://img.shields.io/badge/Multilingual-Support-orange?style=for-the-badge)
 
-Craftelligence is an AI-powered multilingual handicraft e-commerce platform that connects customers with skilled artisans while providing an intelligent and personalized shopping experience. The platform combines modern web technologies with Artificial Intelligence to make discovering and purchasing handcrafted products easier and more engaging.***
+</p>
 
+**Craftelligence** is an **AI-powered multilingual handicraft e-commerce platform** that connects customers with skilled artisans while providing an intelligent and personalized shopping experience.
 
+The platform combines **React**, **Django**, and **Artificial Intelligence** to help users discover handcrafted products, interact with an AI chatbot, and visualize handicrafts in their own space using AI-powered image analysis.
 
+---
 
+# ✨ Features
 
+### 🌍 Multilingual Support
 
+* Supports multiple languages
+* Easy language switching
+* Improved accessibility for diverse users
 
-✨ Features
+### 🛍️ Handicraft Marketplace
 
+* Browse handcrafted products
+* Search & filter by category
+* Product details page
+* User-friendly shopping experience
 
+### 🤖 AI Chatbot
 
-🌍 Multilingual Support
+* Intelligent product recommendations
+* Artisan discovery
+* Customer support
+* Natural language conversations
 
+### 🎨 AI Design Room
 
+* Upload a room or wall image
+* AI analyzes the uploaded image
+* Recommends matching handicraft products
+* Helps visualize products before purchasing
 
-Supports three different languages.
+### 👨‍🎨 Artisan Discovery
 
-Allows users to browse the platform in their preferred language.
+* Browse artisan profiles
+* Explore handcrafted collections
+* Discover products based on artisan specialties
 
-Improves accessibility for users from diverse regions.
+### 🔐 Secure Authentication
 
+* User Registration
+* Login & Logout
+* Role-based authentication
+* Secure backend APIs
 
+---
 
-🛍️ Handicraft Marketplace
+# 🏗️ System Architecture
 
+```mermaid
+flowchart TD
 
+A[User]
+-->B[React Frontend]
 
-Browse handcrafted products from various artisans.
+B-->C[Django REST API]
 
-Search and filter products by category.
+C-->D[(MySQL Database)]
 
-View detailed product information.
+C-->E[AI Chatbot]
 
-Easy-to-use shopping experience.
+C-->F[AI Design Room]
 
+F-->G[Image Analysis]
 
+E-->H[Product Recommendations]
 
-🤖 AI Chatbot
+D-->I[Products]
 
+D-->J[Artisans]
 
+H-->B
+G-->B
+I-->B
+J-->B
+```
 
-Intelligent chatbot that assists users in finding artisans and products.
+---
 
-Provides personalized recommendations based on user queries.
+# ⚙️ Tech Stack
 
-Enhances customer support and navigation.
+| Category | Technologies                          |
+| -------- | ------------------------------------- |
+| Frontend | React.js, HTML5, CSS3, JavaScript     |
+| Backend  | Django, Django REST Framework         |
+| Database | MySQL                                 |
+| AI       | Gemini API, Hugging Face, OpenRouter  |
+| Features | AI Chatbot, Image Recommendation, NLP |
+| Tools    | Git, GitHub                           |
 
+---
 
+# 📂 Project Structure
 
- 🎨 AI Design Room
+```text
+Craftelligence/
 
-
-
-Upload an image of your room or wall.
-
-AI analyzes the uploaded image.
-
-Displays handicraft products that best match the uploaded space.
-
-Helps users visualize products before purchasing.
-
-
-
-👨‍🎨 Artisan Discovery
-
-
-
-Find artisans based on their specialties.
-
-Learn about artisan profiles and their handcrafted collections
-
-
-
- 🔒 Secure Authentication
-
-
-
-User registration and login.
-
-Secure authentication system for customers and administrators.
-
-
-
-
-
-
-
- 🛠️ Tech Stack
-
-
-
-Frontend
-
-
-
- React.js
-
-HTML5
-
-CSS3
-
-JavaScript
-
-
-
-Backend
-
-
-
-Django
-
-Django REST Framework
-
-
-
-Database
-
-
-
-MySQL
-
-Artificial Intelligence
-
-
-
-AI Chatbot
-
-Image-based Product Recommendation
-
-Natural Language Processing
-
-
-
-Other Tools
-
-
-
- Git
-
-GitHub
-
-
-
-Add your api keys in backend/settings.py
-
-
-
-GEMINI\_API\_KEY = "AIza..."
-
-HUGGINGFACE\_API\_KEY = "hf\_Gu..."
-
-OPENROUTER\_API\_KEY = "sk-o..."
-
-SECRET\_KEY = 'djang...'
-
-
-
-***and in last :-
-
-
-
-STRIPE\_SECRET\_KEY = "sk\_te..."
-
-STRIPE\_PUBLISHABLE\_KEY = "pk\_tes..."
-
-
-
-Here 
-
-
-
-
-
-
-
-📂 Project Structure
-
-
-
-
-
-Craftelligence
-
-
-
-├── frontend
-
+├── frontend/
 ├── backend/
-
 ├── media/
-
 ├── static/
+├── requirements.txt
+└── README.md
+```
 
-├── README.md
+---
 
-└── requirements.txt
+# 🚀 Installation
 
-
-
-
-
-
-
-
-
- 🚀 Installation
-
-
-
- Clone the Repository
-
-
+## Clone the Repository
 
 ```bash
-
 git clone https://github.com/your-username/Craftelligence.git
+```
 
+```bash
 cd Craftelligence
-
 ```
 
+---
 
-
- Backend Setup
-
-
+## Backend Setup
 
 ```bash
-
 cd backend
+```
 
+Create a virtual environment
 
-
+```bash
 python -m venv venv
+```
 
+Activate it
 
+**Windows**
 
-# Windows
+```bash
+venv\Scripts\activate
+```
 
-venv\\Scripts\\activate
+**Linux / macOS**
 
-
-
-# Linux/macOS
-
+```bash
 source venv/bin/activate
+```
 
+Install dependencies
 
-
+```bash
 pip install -r requirements.txt
-
 ```
 
-
-
-Run Backend
-
-
+Run the backend
 
 ```bash
-
 python manage.py migrate
-
-python manage.py runserver
-
 ```
-
-
-
-Frontend Setup
-
-
 
 ```bash
-
-cd frontend
-
-
-
-npm install
-
-npm start
-
+python manage.py runserver
 ```
 
+---
 
+## Frontend Setup
 
+```bash
+cd frontend
+```
 
+```bash
+npm install
+```
 
+```bash
+npm start
+```
 
+---
 
-📸 Screenshots
+# 🔑 Environment Variables
 
+Store your API keys securely using environment variables instead of hardcoding them.
 
+Create a `.env` file (or configure your Django settings to read from environment variables):
+
+```env
+GEMINI_API_KEY=your_gemini_api_key
+
+HUGGINGFACE_API_KEY=your_huggingface_api_key
+
+OPENROUTER_API_KEY=your_openrouter_api_key
+
+SECRET_KEY=your_django_secret_key
+
+STRIPE_SECRET_KEY=your_stripe_secret_key
+
+STRIPE_PUBLISHABLE_KEY=your_stripe_publishable_key
+```
+
+> **Note:** Never commit your `.env` file or real API keys to GitHub.
+
+---
+
+# 📸 Screenshots
 
 Add screenshots of:
 
+* 🏠 Home Page
+* 🛍️ Product Listing
+* 🤖 AI Chatbot
+* 🎨 AI Design Room
+* 👨‍🎨 Artisan Profile
+* 📦 Product Details
+* 🌍 Multilingual Interface
 
+---
 
-Home Page
+# 🚀 Future Enhancements
 
- Product Listing
+* 💳 Stripe Payment Integration
+* 📦 Order Tracking
+* ❤️ Wishlist
+* ⭐ Product Reviews & Ratings
+* 🎤 Voice-enabled AI Assistant
+* 🎯 Personalized AI Recommendations
+* 📱 Mobile Application
+* 📊 Admin Analytics Dashboard
 
- AI Chatbot
+---
 
- AI Design Room
- Artisan Profile
+# 👨‍💻 Contributors
 
- Product Details
+**Jenil Mangukiya**
 
- Multilingual Interface
+---
 
+# 📄 License
 
+This project was developed for **educational and academic purposes**.
 
+---
 
+## ⭐ Support
 
+If you found this project useful, consider giving it a **⭐ Star** on GitHub.
 
-
-🎯 Future Enhancements
-
-
-
-Payment Gateway Integration
-
- Order Tracking
-
- Wishlist
-
- Product Reviews and Ratings
-
-Voice-enabled AI Assistant
-
- AI-based Personalized Recommendations
-
- Mobile Application
-
-
-
-
-
-
-
- 🤝 Contributors
-
-
-
-Jenil Mangukiya
-
-
-
-
-
-
-
- 📄 License
-
-
-
-This project is developed for educational and academic purposes
-
-
-
-
-
-
- ⭐ Support
-
-
-
-If you found this project useful, consider giving it a ⭐ on GitHub
-
-
-
-It helps others discover the project and motivates further development
-
-
-
+Your support helps others discover the project and encourages future development.
